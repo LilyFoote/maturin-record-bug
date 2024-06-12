@@ -168,6 +168,14 @@ jobs:
           name: wheels-sdist
           path: project/dist
 
+  check-record:
+    name: Check RECORD
+    runs-on: ubuntu-latest
+    needs: [linux, musllinux, windows, macos, sdist]
+    steps:
+      - uses: actions/download-artifact@v4
+      - run: ls
+
   release:
     name: Release
     runs-on: ubuntu-latest
