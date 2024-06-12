@@ -176,6 +176,8 @@ jobs:
       - uses: actions/download-artifact@v4
       - run: unzip wheels-linux-x86_64/project-0.1.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl -d project-wheel
       - run: ls -al project-wheel
+      - run: ls -al project-wheel/project
+      - run: ls -al project-wheel/project-0.1.0.dist-info
 
   release:
     name: Release
