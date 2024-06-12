@@ -174,7 +174,8 @@ jobs:
     needs: [linux] #, musllinux, windows, macos, sdist]
     steps:
       - uses: actions/download-artifact@v4
-      - run: ls wheels-linux-x86_64
+      - run: unzip wheels-linux-x86_64/project-0.1.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl -d project-wheel
+      - run: ls -al project-wheel
 
   release:
     name: Release
